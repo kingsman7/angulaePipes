@@ -21,7 +21,7 @@ const routes: Routes = [
     component:NumbersComponent
   },
   {
-    path:'sorts',
+    path:'sort',
     component:SortsComponent
   },
   {

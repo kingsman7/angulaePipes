@@ -1,1 +1,54 @@
-<p>sorts works!</p>
+<div class="text-layout">
+  <h1>Pipes Personalizados</h1>
+  <p>Pipes creados por mi</p>
+</div>
+
+<p-toolbar>
+  <div class="p-toolbar-group-left">
+
+  </div>
+
+  <div class="p-toolbar-group-right">
+    <button 
+      pButton 
+      label="Por Nombre" 
+      icon="pi pi-sort" 
+      class="mr-2"
+      (click)="order('name')"
+    ></button>
+    <button 
+      pButton 
+      label="Vuela" 
+      icon="pi pi-sort" 
+      class="mr-2"
+      (click)="order('fly')"
+    ></button>
+    <button 
+      pButton 
+      label="Por color" 
+      icon="pi pi-sort"
+      (click)="order('color')"
+    ></button>
+  </div>
+</p-toolbar>
+
+<div class="grip">
+  <div class="col-12 px-0">
+    <p-table [value]="hero | sort:orderBy:isUp" responsiveLayout="scroll">
+      <ng-template pTemplate="header">
+          <tr>
+              <th>Nombre</th>
+              <th>Vuela</th>
+              <th>Color</th>
+          </tr>
+      </ng-template>
+      <ng-template pTemplate="body" let-hero>
+          <tr>
+              <td>{{hero.name}}</td>
+              <td>{{hero.fly | isFly | titlecase}}</td>
+              <td>{{hero.color}}</td>
+          </tr>
+      </ng-template>
+  </p-table>
+  </div>
+</div>

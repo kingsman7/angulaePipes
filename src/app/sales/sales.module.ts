@@ -7,6 +7,8 @@ import { SortsComponent } from './pages/sorts/sorts.component';
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
 import { SharedModule } from '../shared/shared.module';
 
+import { SortPipe } from './pipes/sort.pipe';
+import { IsFlyPipe } from './pipes/is-fly.pipe';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { SharedModule } from '../shared/shared.module';
     NumbersComponent,
     NoCommunsComponent,
     BasicsComponent,
-    SortsComponent
+    SortsComponent,
+    SortPipe,
+    IsFlyPipe
   ],
   imports: [
     CommonModule,

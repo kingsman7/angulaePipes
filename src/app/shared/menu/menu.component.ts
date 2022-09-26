@@ -38,8 +38,11 @@ export class MenuComponent implements OnInit {
         label: 'Customs Pipes',
         icon: 'pi pi-cog',
         items: [
-          { label: 'Delete', icon: 'pi pi-fw pi-trash' },
-          { label: 'Refresh', icon: 'pi pi-fw pi-refresh' }
+          { 
+            label: 'Sorts', 
+            icon: 'pi pi-sort-alpha-down',
+            routerLink:'sort'
+          },
         ]
       }
     ];

@@ -1,0 +1,26 @@
+<div class="text-layout">
+	<h1>Pipes Básicos</h1>
+	<p>Pipes incluidos en Angular - usualmente en Commons Module.</p>
+</div>
+
+<div class="grid">
+	<div class="col-4">
+		<p-card header="DecimalPipe" subheader="totalsSellers | number:'1.2-2':'es-CO'">
+			{{ totalsSellers | number:'1.2-2':'es-CO' }}
+		</p-card>
+	</div>
+	<div class="col-4">
+		<p-card header="CurrencyPipe" subheader="totalsSellers | currency:'$'">
+			{{ totalsSellers | currency:'$' }}
+		</p-card>
+		<hr>
+		<p-card header="CurrencyPipe" subheader="totalsSellers | currency:'USD':'symbol-narrow':'1.4-4':'en'">
+			{{ totalsSellers | currency:'USD':'symbol-narrow':'1.4-4':'en' }}
+		</p-card>
+	</div>
+	<div class="col-4">
+		<p-card header="PercentPipe" subheader="percent | percent:'1.2-2'">
+			{{ percent | percent:'1.2-2' }}
+		</p-card>
+	</div>
+</div>

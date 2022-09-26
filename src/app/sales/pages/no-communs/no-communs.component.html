@@ -1,0 +1,65 @@
+<div class="text-layout">
+  <h1>Pipes Básicos</h1>
+  <p>Pipes incluidos en Angular - usualmente no tan utilizados</p>
+</div>
+
+<div class="grid">
+  <div class="col md:col-6">
+    <p-fieldset legend="i18nSelectPipe" [toggleable]="true">
+      <p> Saludos {{ name }}!, es un placer {{ gender | i18nSelect: inviteMap}} a este evento </p>
+      <button pButton type="button" label="Cambiar cliente" class="text-layout" (click)="changeClient()"></button>
+
+    </p-fieldset>
+  </div>
+  <div class="col md:col-6">
+    <p-fieldset legend="i18nPluralPipe" [toggleable]="true">
+      <p>Actualmente tenemos {{clients.length | i18nPlural: pluralMap}} esperando.</p>
+
+      <button pButton type="button" label="Agregar cliente" (click)="addClient()" class="text-layout"></button>
+      <button [disabled]="clients.length == 0" pButton type="button" (click)="delClient()" label="Quitar clientes"
+        class="ml-2 p-button-secondary"></button>
+
+    </p-fieldset>
+  </div>
+
+  <div class="col md:col-6">
+    <p-fieldset legend="SlicePipe" [toggleable]="true">
+      <b>Original</b>
+      <pre>{{clientsSlice}}</pre>
+
+      <b>slice 0-2</b>
+      <pre>{{clientsSlice | slice:0:2}}</pre>
+
+      <b>slice 2-{{clientsSlice.length}}</b>
+      <pre>{{clientsSlice | slice:2:clientsSlice.length}}</pre>
+
+    </p-fieldset>
+  </div>
+
+  <div class="col md:col-6">
+    <p-fieldset legend="KeyValuePipe & json" [toggleable]="true">
+      <b class="mb-2">Object | json</b>
+      <br>
+      <pre>{{person | json}}</pre>
+      <hr>
+      <b>iterar un objeto on | keyValuePipe</b>
+      <ul>
+        <li *ngFor="let item of person | keyvalue">
+          <b>{{item.key | titlecase}}:</b> {{ item.value}}
+        </li>
+      </ul>
+    </p-fieldset>
+  </div>
+  
+  <div class="col md:col-6">
+    <p-fieldset legend="Async Pipe" [toggleable]="true">
+      <ng-container *ngIf="myPromise | async; else elseTemplate">
+        <b class="mb-2">{{myPromise | async}}</b>
+      </ng-container>
+      <ng-template #elseTemplate>
+        Cargando....
+      </ng-template>
+      
+    </p-fieldset>
+  </div>
+</div>
